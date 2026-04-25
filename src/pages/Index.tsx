@@ -392,10 +392,10 @@ const Index = () => {
                 >
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange-deep to-brand-orange"></div>
                   <CardContent className="p-6">
-                    <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/10 border border-brand-orange/30 group-hover:bg-brand-orange/20 transition-colors duration-300">
-                      <Icon className="h-8 w-8 text-brand-orange" strokeWidth={2.2} />
+                    <div className="mb-4 inline-flex p-3 rounded-lg bg-white/10 border border-white/30 group-hover:bg-brand-orange/20 group-hover:border-brand-orange/40 transition-colors duration-300">
+                      <Icon className="h-8 w-8 text-white group-hover:text-brand-orange transition-colors duration-300" strokeWidth={2.2} />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 group-hover:!text-brand-orange-deep">
+                    <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 group-hover:!text-brand-orange">
                       {sol.title}
                     </h3>
                     <p className="text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-100">
