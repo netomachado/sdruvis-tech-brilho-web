@@ -398,7 +398,7 @@ const Index = () => {
                     <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 group-hover:!text-brand-orange">
                       {sol.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-brand-orange-glow">
                       {sol.description}
                     </p>
                   </CardContent>
