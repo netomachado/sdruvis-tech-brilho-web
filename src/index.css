@@ -146,31 +146,8 @@
   animation: glowOrange 2.5s ease-in-out infinite alternate;
 }
 
-.text-brand-orange {
-  color: hsl(var(--brand-orange));
-}
+/* brand-orange utilities are provided by Tailwind via the `brand-orange` color token */
 
-.bg-brand-orange {
-  background-color: hsl(var(--brand-orange));
-}
-
-.border-brand-orange {
-  border-color: hsl(var(--brand-orange));
-}
-
-.from-brand-orange {
-  --tw-gradient-from: hsl(var(--brand-orange));
-  --tw-gradient-to: hsl(var(--brand-orange) / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-brand-orange-glow {
-  --tw-gradient-to: hsl(var(--brand-orange-glow));
-}
-
-.via-brand-orange {
-  --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--brand-orange)), var(--tw-gradient-to);
-}
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
