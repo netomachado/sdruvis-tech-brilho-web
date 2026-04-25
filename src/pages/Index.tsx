@@ -299,15 +299,20 @@ const Index = () => {
                 melhores práticas e tecnologias emergentes.
               </p>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-brand-orange rounded-lg transform rotate-6"></div>
+            <div className="relative mx-auto w-full max-w-md md:max-w-none px-4 sm:px-6 md:px-0 mt-4 md:mt-0">
+              <div
+                aria-hidden="true"
+                className="absolute inset-2 sm:inset-3 md:inset-0 bg-gradient-to-r from-blue-600 to-brand-orange rounded-lg transform rotate-3 md:rotate-6"
+              ></div>
               <img
                 src={escritorioTecnologico}
                 alt="Escritório tecnológico da Sdruvis Tecnologia com múltiplos monitores e ambiente futurista"
                 width={1280}
                 height={896}
-                className="relative z-10 w-full rounded-lg shadow-2xl"
+                sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 600px"
+                className="relative z-10 w-full h-auto aspect-[10/7] object-cover rounded-lg shadow-2xl"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
