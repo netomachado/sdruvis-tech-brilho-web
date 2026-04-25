@@ -64,7 +64,8 @@ export default {
 				},
 				'brand-orange': {
 					DEFAULT: 'hsl(var(--brand-orange))',
-					glow: 'hsl(var(--brand-orange-glow))'
+					glow: 'hsl(var(--brand-orange-glow))',
+					deep: 'hsl(var(--brand-orange-deep))'
 				}
 			},
 			borderRadius: {
