@@ -20,6 +20,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import industriaFarmaceutica from "@/assets/industria-farmaceutica.jpg";
 import galpaoLogistico from "@/assets/galpao-logistico.jpg";
 import pivoIrrigacao from "@/assets/pivo-irrigacao.jpg";
+import escritorioTecnologico from "@/assets/escritorio-tecnologico.jpg";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -301,8 +302,10 @@ const Index = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-brand-orange rounded-lg transform rotate-6"></div>
               <img
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
-                alt="Equipe Sdruvis Tecnologia"
+                src={escritorioTecnologico}
+                alt="Escritório tecnológico da Sdruvis Tecnologia com múltiplos monitores e ambiente futurista"
+                width={1280}
+                height={896}
                 className="relative z-10 w-full rounded-lg shadow-2xl"
                 loading="lazy"
               />
