@@ -75,6 +75,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --brand-orange: 22 96% 55%;
+    --brand-orange-glow: 28 100% 62%;
   }
 }
 
@@ -128,6 +131,45 @@
   to {
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
   }
+}
+
+@keyframes glowOrange {
+  from {
+    box-shadow: 0 0 20px hsl(var(--brand-orange) / 0.45);
+  }
+  to {
+    box-shadow: 0 0 35px hsl(var(--brand-orange) / 0.8);
+  }
+}
+
+.animate-glow-orange {
+  animation: glowOrange 2.5s ease-in-out infinite alternate;
+}
+
+.text-brand-orange {
+  color: hsl(var(--brand-orange));
+}
+
+.bg-brand-orange {
+  background-color: hsl(var(--brand-orange));
+}
+
+.border-brand-orange {
+  border-color: hsl(var(--brand-orange));
+}
+
+.from-brand-orange {
+  --tw-gradient-from: hsl(var(--brand-orange));
+  --tw-gradient-to: hsl(var(--brand-orange) / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-brand-orange-glow {
+  --tw-gradient-to: hsl(var(--brand-orange-glow));
+}
+
+.via-brand-orange {
+  --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--brand-orange)), var(--tw-gradient-to);
 }
 
 /* Custom scrollbar */
