@@ -45,6 +45,10 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --brand-orange: 22 96% 55%;
+    --brand-orange-glow: 28 100% 62%;
+    --brand-orange-deep: 18 100% 48%;
   }
 
   .dark {
