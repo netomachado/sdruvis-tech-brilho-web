@@ -395,7 +395,7 @@ const Index = () => {
                     <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/15 border border-brand-orange/40 group-hover:bg-brand-orange/25 transition-colors duration-300">
                       <Icon className="h-8 w-8 text-brand-orange" strokeWidth={2.2} />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 group-hover:!text-brand-orange">
                       {sol.title}
                     </h3>
                     <p className="text-gray-300 leading-relaxed">
