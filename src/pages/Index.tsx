@@ -388,17 +388,17 @@ const Index = () => {
               return (
                 <Card
                   key={index}
-                  className="bg-slate-900/70 border-2 border-brand-orange/60 hover:border-brand-orange transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden shadow-[0_0_25px_-10px_hsl(var(--brand-orange)/0.5)] hover:shadow-[0_0_35px_-5px_hsl(var(--brand-orange)/0.8)]"
+                  className="bg-slate-900/70 border-2 border-brand-orange-deep hover:border-brand-orange-deep transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden shadow-[0_0_25px_-8px_hsl(var(--brand-orange-deep)/0.6)] hover:shadow-[0_0_40px_-4px_hsl(var(--brand-orange-deep)/0.9)]"
                 >
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-orange-glow"></div>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange-deep to-brand-orange"></div>
                   <CardContent className="p-6">
-                    <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/15 border border-brand-orange/40 group-hover:bg-brand-orange/25 transition-colors duration-300">
+                    <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/10 border border-brand-orange/30 group-hover:bg-brand-orange/20 transition-colors duration-300">
                       <Icon className="h-8 w-8 text-brand-orange" strokeWidth={2.2} />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 group-hover:!text-brand-orange">
+                    <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 group-hover:!text-brand-orange-deep">
                       {sol.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-brand-orange-glow">
+                    <p className="text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-100">
                       {sol.description}
                     </p>
                   </CardContent>
