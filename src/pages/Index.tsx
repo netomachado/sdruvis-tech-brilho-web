@@ -375,25 +375,28 @@ const Index = () => {
 
           {/* Solution cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {solucoes.map((sol, index) => (
-              <Card
-                key={index}
-                className="bg-slate-900/70 border-slate-700 hover:border-brand-orange transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-orange-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <CardContent className="p-6">
-                  <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/10 border border-brand-orange/20 group-hover:bg-brand-orange/20 transition-colors duration-300">
-                    <sol.icon className="h-8 w-8 text-brand-orange" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                    {sol.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {sol.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            {solucoes.map((sol, index) => {
+              const Icon = sol.icon;
+              return (
+                <Card
+                  key={index}
+                  className="bg-slate-900/70 border-2 border-brand-orange/60 hover:border-brand-orange transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden shadow-[0_0_25px_-10px_hsl(var(--brand-orange)/0.5)] hover:shadow-[0_0_35px_-5px_hsl(var(--brand-orange)/0.8)]"
+                >
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-brand-orange-glow"></div>
+                  <CardContent className="p-6">
+                    <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/15 border border-brand-orange/40 group-hover:bg-brand-orange/25 transition-colors duration-300">
+                      <Icon className="h-8 w-8 text-brand-orange" strokeWidth={2.2} />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                      {sol.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {sol.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           {/* Industry segments showcase */}
