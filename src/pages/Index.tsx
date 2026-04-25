@@ -9,9 +9,17 @@ import {
   Brain,
   Wifi,
   Factory,
+  Cpu,
+  Workflow,
+  Cloud,
+  MessageSquare,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import industriaFarmaceutica from "@/assets/industria-farmaceutica.jpg";
+import galpaoLogistico from "@/assets/galpao-logistico.jpg";
+import pivoIrrigacao from "@/assets/pivo-irrigacao.jpg";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,6 +78,60 @@ const Index = () => {
     },
   ];
 
+  const solucoes = [
+    {
+      icon: Cpu,
+      title: "Deep Learning & Machine Learning",
+      description:
+        "Criação e treinamento de algoritmos de deep learning e machine learning desenvolvidos sob medida para os desafios específicos de empresas e indústrias, gerando modelos preditivos, de classificação e de visão computacional com alto desempenho.",
+    },
+    {
+      icon: Workflow,
+      title: "Automação com n8n e Agentes de IA",
+      description:
+        "Automatizamos atividades operacionais e fluxos de trabalho complexos utilizando n8n e agentes de IA, integrando sistemas, eliminando tarefas repetitivas e acelerando a produtividade do seu time.",
+    },
+    {
+      icon: Factory,
+      title: "Projetos de IoT para Indústria 4.0",
+      description:
+        "Desenvolvemos projetos completos de IoT industrial, do sensoriamento de chão de fábrica à plataforma de dados, habilitando manutenção preditiva, eficiência energética e monitoramento em tempo real.",
+    },
+    {
+      icon: Cloud,
+      title: "Arquitetura e Desenvolvimento Serverless",
+      description:
+        "Projetamos e desenvolvemos sistemas serverless escaláveis e resilientes, com arquiteturas modernas que reduzem custo de infraestrutura e aceleram o time-to-market dos seus produtos digitais.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Agentes Conversacionais com IA",
+      description:
+        "Construímos agentes conversacionais inteligentes integrados a LLMs e bases de conhecimento próprias da empresa, capazes de atender clientes, apoiar times internos e executar ações em sistemas corporativos.",
+    },
+  ];
+
+  const segmentos = [
+    {
+      img: industriaFarmaceutica,
+      title: "Indústria Farmacêutica",
+      description:
+        "Soluções para salas limpas, rastreabilidade de lotes, controle de qualidade e otimização de linhas de produção.",
+    },
+    {
+      img: galpaoLogistico,
+      title: "Logística & Supply Chain",
+      description:
+        "Gestão inteligente de pátios, monitoramento de frotas, roteirização e visibilidade em tempo real das operações.",
+    },
+    {
+      img: pivoIrrigacao,
+      title: "Agronegócio",
+      description:
+        "IoT no campo, irrigação inteligente, análise de imagens e modelos preditivos para produtividade da lavoura.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Header */}
@@ -83,26 +145,33 @@ const Index = () => {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-white">
-              <span className="text-blue-400">Sdruvis</span> Tecnologia
+              <span className="text-blue-400">Sdruvis</span>{" "}
+              <span className="text-brand-orange">Tecnologia</span>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => scrollToSection("empresa")}
-                className="text-white hover:text-blue-400 transition-colors duration-300"
+                className="text-white hover:text-brand-orange transition-colors duration-300"
               >
                 Empresa
               </button>
               <button
                 onClick={() => scrollToSection("servicos")}
-                className="text-white hover:text-blue-400 transition-colors duration-300"
+                className="text-white hover:text-brand-orange transition-colors duration-300"
               >
                 Serviços
               </button>
               <button
+                onClick={() => scrollToSection("solucoes")}
+                className="text-white hover:text-brand-orange transition-colors duration-300"
+              >
+                Soluções
+              </button>
+              <button
                 onClick={() => scrollToSection("contato")}
-                className="text-white hover:text-blue-400 transition-colors duration-300"
+                className="text-white hover:text-brand-orange transition-colors duration-300"
               >
                 Contato
               </button>
@@ -123,19 +192,25 @@ const Index = () => {
               <div className="flex flex-col space-y-4 p-6">
                 <button
                   onClick={() => scrollToSection("empresa")}
-                  className="text-white hover:text-blue-400 transition-colors duration-300 text-left"
+                  className="text-white hover:text-brand-orange transition-colors duration-300 text-left"
                 >
                   Empresa
                 </button>
                 <button
                   onClick={() => scrollToSection("servicos")}
-                  className="text-white hover:text-blue-400 transition-colors duration-300 text-left"
+                  className="text-white hover:text-brand-orange transition-colors duration-300 text-left"
                 >
                   Serviços
                 </button>
                 <button
+                  onClick={() => scrollToSection("solucoes")}
+                  className="text-white hover:text-brand-orange transition-colors duration-300 text-left"
+                >
+                  Soluções
+                </button>
+                <button
                   onClick={() => scrollToSection("contato")}
-                  className="text-white hover:text-blue-400 transition-colors duration-300 text-left"
+                  className="text-white hover:text-brand-orange transition-colors duration-300 text-left"
                 >
                   Contato
                 </button>
@@ -147,7 +222,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-orange-600/10"></div>
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -162,7 +237,7 @@ const Index = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
             <span className="text-blue-400">Inovação</span> em
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-brand-orange to-orange-300 bg-clip-text text-transparent">
               Tecnologia
             </span>
           </h1>
@@ -174,7 +249,7 @@ const Index = () => {
           </p>
           <Button
             onClick={() => scrollToSection("empresa")}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg animate-fade-in"
+            className="bg-brand-orange hover:opacity-90 text-white px-8 py-3 text-lg animate-fade-in animate-glow-orange"
             style={{ animationDelay: "0.6s" }}
           >
             Conheça Nossos Serviços
@@ -185,7 +260,7 @@ const Index = () => {
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full animate-pulse"></div>
         <div
-          className="absolute bottom-32 right-10 w-16 h-16 bg-purple-500/20 rounded-full animate-pulse"
+          className="absolute bottom-32 right-10 w-16 h-16 bg-brand-orange/30 rounded-full animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
@@ -199,9 +274,10 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Sobre a <span className="text-blue-400">Sdruvis Tecnologia</span>
+              Sobre a <span className="text-blue-400">Sdruvis</span>{" "}
+              <span className="text-brand-orange">Tecnologia</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-brand-orange to-orange-300 mx-auto mb-8"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -223,11 +299,12 @@ const Index = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg transform rotate-6"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-brand-orange rounded-lg transform rotate-6"></div>
               <img
                 src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
                 alt="Equipe Sdruvis Tecnologia"
                 className="relative z-10 w-full rounded-lg shadow-2xl"
+                loading="lazy"
               />
             </div>
           </div>
@@ -241,7 +318,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Nossos <span className="text-blue-400">Serviços</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-brand-orange to-orange-300 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Oferecemos um portfólio completo de serviços tecnológicos para
               impulsionar seu negócio
@@ -252,13 +329,13 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="bg-slate-900/50 border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 group"
+                className="bg-slate-900/50 border-slate-700 hover:border-brand-orange transition-all duration-300 hover:transform hover:scale-105 group"
               >
                 <CardContent className="p-6">
                   <div className="mb-4">
-                    <service.icon className="h-12 w-12 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+                    <service.icon className="h-12 w-12 text-blue-400 group-hover:text-brand-orange transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -271,21 +348,108 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Solutions Section */}
+      <section
+        id="solucoes"
+        className="py-20 px-6 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 relative overflow-hidden"
+      >
+        {/* Decorative orange accents */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-brand-orange/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-orange/40 bg-brand-orange/10 text-brand-orange text-sm font-medium mb-6">
+              <Sparkles className="h-4 w-4" />
+              Soluções de Ponta
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Nossas <span className="text-brand-orange">Soluções</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-brand-orange via-orange-400 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Aplicamos IA, automação e arquiteturas modernas para resolver
+              desafios reais de empresas e indústrias.
+            </p>
+          </div>
+
+          {/* Solution cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {solucoes.map((sol, index) => (
+              <Card
+                key={index}
+                className="bg-slate-900/70 border-slate-700 hover:border-brand-orange transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange to-orange-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <CardContent className="p-6">
+                  <div className="mb-4 inline-flex p-3 rounded-lg bg-brand-orange/10 border border-brand-orange/20 group-hover:bg-brand-orange/20 transition-colors duration-300">
+                    <sol.icon className="h-8 w-8 text-brand-orange" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                    {sol.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {sol.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Industry segments showcase */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Setores que <span className="text-brand-orange">atendemos</span>
+            </h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Experiência aplicada em segmentos estratégicos da economia
+              brasileira.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {segmentos.map((seg, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-xl border border-slate-700 hover:border-brand-orange transition-all duration-500"
+              >
+                <img
+                  src={seg.img}
+                  alt={seg.title}
+                  width={1536}
+                  height={1024}
+                  loading="lazy"
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="w-10 h-1 bg-brand-orange mb-3 group-hover:w-20 transition-all duration-500"></div>
+                  <h4 className="text-2xl font-bold text-white mb-2">
+                    {seg.title}
+                  </h4>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {seg.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contato" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Entre em <span className="text-blue-400">Contato</span>
+              Entre em <span className="text-brand-orange">Contato</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-brand-orange via-orange-400 to-blue-400 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300">
               Pronto para transformar sua ideia em realidade? Vamos conversar!
             </p>
           </div>
 
-          {/* <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8"> */}
           <div className="flex justify-center">
             <div className="space-y-8 max-w-md w-full text-center">
               <div>
@@ -294,70 +458,32 @@ const Index = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-brand-orange rounded-full"></div>
                     <span className="text-gray-300">
                       contato@sdruvis.tec.br
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-brand-orange rounded-full"></div>
                     <span className="text-gray-300">+55 (19) 99439-7474</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-brand-orange rounded-full"></div>
                     <span className="text-gray-300">Campinas, SP - Brasil</span>
                   </div>
                 </div>
               </div>
-
-              {/* <div>
-                <h3 className="text-2xl font-bold text-white mb-4">Horário de Atendimento</h3>
-                <div className="space-y-2">
-                  <p className="text-gray-300">Segunda a Sexta: 8h às 18h</p>
-                  <p className="text-gray-300">Sábado: 9h às 14h</p>
-                </div>
-              </div> */}
             </div>
-
-            {/* <Card className="bg-slate-900/50 border-slate-700">
-              <CardContent className="p-6">
-                <form className="space-y-4">
-                  <div>
-                    <input 
-                      type="text" 
-                      placeholder="Seu nome"
-                      className="w-full p-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300"
-                    />
-                  </div>
-                  <div>
-                    <input 
-                      type="email" 
-                      placeholder="Seu e-mail"
-                      className="w-full p-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300"
-                    />
-                  </div>
-                  <div>
-                    <textarea 
-                      placeholder="Sua mensagem"
-                      rows={4}
-                      className="w-full p-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors duration-300 resize-none"
-                    ></textarea>
-                  </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 transition-colors duration-300">
-                    Enviar Mensagem
-                  </Button>
-                </form>
-              </CardContent>
-            </Card> */}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 py-8 px-6">
+      <footer className="bg-slate-900 py-8 px-6 border-t border-slate-800">
         <div className="container mx-auto text-center">
           <div className="text-2xl font-bold text-white mb-4">
-            <span className="text-blue-400">Sdruvis</span> Tecnologia
+            <span className="text-blue-400">Sdruvis</span>{" "}
+            <span className="text-brand-orange">Tecnologia</span>
           </div>
           <p className="text-gray-400">
             © 2024 Sdruvis Tecnologia. Todos os direitos reservados.
